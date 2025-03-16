@@ -28,43 +28,47 @@
     gap: 30px;
 }
 
-.navi {
+header {
     max-width: 960px;
-    list-style: none;
-    padding: 0;
     display: flex;
-    gap: 30px;
     justify-content: space-between;
+    margin: 0 auto;
+    align-items: center;
 }
 
-.menu {
+.nav {
     max-width: 960px;
-    list-style: none;
-    padding: 0;
     display: flex;
     gap: 30px;
     justify-content: flex-end;
-    text-align: center;
 }
 
-li+li {
+li {
     border-left: 1px solid;
-    padding: 0 0 0 30px;
+    padding: 5px 0 5px 30px;
+}
+
+li:first-child {
+    border-left: none;
 }
 
 @media screen and (max-width: 767px) {
-    .navi {
-        flex-direction: column;
-    }
-
-    .menu {
+    header {
         flex-direction: column;
         align-items: flex-start;
+        padding-left: 10px;
+        gap: 5px;
     }
 
-    li+li {
+    .nav {
+        flex-direction: column;
+        width: 100%;
+        gap: 5px;
+    }
+
+    .nav li {
         border-left: none;
         border-bottom: 1px solid;
-        padding: 0 0 5px 0;
+        padding-left: 0;
     }
 }
