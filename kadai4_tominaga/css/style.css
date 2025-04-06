@@ -1,7 +1,7 @@
 @charset "utf-8";
 
 /* ヘッダー */
-.header {
+header {
     position: relative;
 }
 
@@ -95,19 +95,17 @@ h2 {
 
 .about_text {
     font-size: 16px;
-    width: 411px;
-    height: 292px;
     line-height: 1.62;
 }
 
 .about_group {
     text-align: left;
-    width: 50%;
+    width: 41%;
+    padding-right: 10px;
 }
 
 #about {
     display: flex;
-    gap: 80px;
     margin-top: 92px;
     justify-content: space-between;
 }
@@ -139,12 +137,20 @@ h2 {
     border-top-right-radius: 42px;
 }
 
+.menu_detail li {
+    width: 30%;
+}
+
 .menu_detail p {
-    width: 300px;
     text-align: left;
     padding-top: 20px;
     line-height: 1.47;
 }
+
+#menu {
+    padding-right: 10px;
+}
+
 
 /* gallery */
 .title3 {
@@ -182,6 +188,10 @@ h2 {
 }
 
 .event_detail li {
+    line-height: 1.95;
+}
+
+.event_text {
     text-decoration: underline;
 }
 
@@ -224,4 +234,12 @@ footer {
     font-size: 16px;
     text-align: center;
     padding-bottom: 73px;
+}
+
+/* ページトップボタン */
+.pagetop {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    width: 125px;
 }
