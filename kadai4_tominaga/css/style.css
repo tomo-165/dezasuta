@@ -126,7 +126,7 @@ h2 {
 }
 
 .menu_title {
-    color: red;
+    color: #d30202;
     text-align: left;
     font-size: 38px;
     margin-top: -8px;
@@ -148,7 +148,7 @@ h2 {
 }
 
 #menu {
-    padding-right: 10px;
+    padding: 0 10px;
 }
 
 
@@ -178,8 +178,14 @@ h2 {
 .event_detail {
     border: 3.7px solid;
     background-color: white;
-    padding: 37px 168px 37px 158px;
+    padding: 37px 0px;
     font-size: 23px;
+}
+
+.event_detail div {
+    display: inline-block;
+    /* width: fit-content;
+    margin: 0 auto; */
 }
 
 .event_detail ul {
@@ -195,6 +201,10 @@ h2 {
     text-decoration: underline;
 }
 
+#event {
+    padding: 0 10px;
+}
+
 /* access */
 .title5 {
     width: 214px;
@@ -205,6 +215,7 @@ h2 {
 iframe {
     height: 471px;
     width: 100%;
+    display: block;
 }
 
 /* footer */
@@ -224,6 +235,7 @@ footer {
 .footer_logo {
     width: 227px;
     height: 50px;
+    padding-left: 10px;
 }
 
 .footer_wrap p {
