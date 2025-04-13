@@ -7,14 +7,17 @@
     <title>Design Cafe</title>
     <link rel="stylesheet" href="./css/reset.css">
     <link rel="stylesheet" href="./css/style.css">
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 </head>
 
 <body>
     <header id="header">
         <div class="header_slider">
             <div>
-                <img src="./images/pc_first-100.jpg" alt="店内の様子">
+                <picture>
+                    <source srcset="./images/sp_main_vs@2x-100.jpg" media="(max-width:767px)">
+                    <img src="./images/pc_first-100.jpg" alt="店内の様子">
+                </picture>
             </div>
         </div>
         <div class="header_wrap">
@@ -23,6 +26,18 @@
             </h1>
 
             <nav class="pc_nav">
+                <ul>
+                    <li><a href="#about">ABOUT US</a></li>
+                    <li><a href="#menu">MENU</a></li>
+                    <li><a href="#gallery">GALLERY</a></li>
+                    <li><a href="#event">EVENT</a></li>
+                    <li><a href="#access">ACCESS</a></li>
+                </ul>
+            </nav>
+            <div class="sp_btn">
+                <span></span>
+            </div>
+            <nav class="sp_nav">
                 <ul>
                     <li><a href="#about">ABOUT US</a></li>
                     <li><a href="#menu">MENU</a></li>
@@ -40,9 +55,12 @@
         <p class="copy3">毎日を丁寧に大切に過ごしたい。だからこそ一杯一杯丁寧にコーヒーを入れ<br>足を運んでくれるお客さんには落ち着く空間とこだわりのコーヒーを提供したい。</p>
     </div>
 
-    <section id="about" class="part">
-        <div class="style">
-            <img src="./images/pc_about-100.jpg" alt="乾杯の写真" class="about_photo">
+    <section id="about" class="part part_767">
+        <div class="style ">
+            <picture>
+                <source srcset="./images/about_sp.jpg" media="(max-width:767px)">
+                <img src="./images/pc_about-100.jpg" alt="乾杯の写真" class="about_photo">
+            </picture>
         </div>
         <div class="about_group">
             <h2 class="title1">
@@ -63,21 +81,30 @@
         </h2>
         <ul class="menu_detail">
             <li>
-                <img src="./images/pc_menu_drink-100.jpg" alt="コーヒーの写真" class="menu_photo">
+                <picture>
+                    <source srcset="./images/drink_sp@2x-100.jpg" media="(max-width:767px)">
+                    <img src="./images/pc_menu_drink-100.jpg" alt="コーヒーの写真" class="menu_photo">
+                </picture>
                 <div class="Drink">
                     <h3 class="menu_title">Drink</h3>
                     <p>ドリンクメニューの概要を100文字程度で紹介します。素材やこだわりなどをアピールしていきます。</p>
                 </div>
             </li>
             <li>
-                <img src="./images/pc_menu_food-100.jpg" alt="食事の写真" class="menu_photo">
+                <picture>
+                    <source srcset="./images/food_sp@2x-100.jpg" media="(max-width:767px)">
+                    <img src="./images/pc_menu_food-100.jpg" alt="食事の写真" class="menu_photo">
+                </picture>
                 <div class="food">
                     <h3 class="menu_title">Food</h3>
                     <p>フードメニューの概要を100文字程度で紹介します。素材やこだわりなどをアピールしていきます。</p>
                 </div>
             </li>
             <li>
-                <img src="./images/pc_menu_sweets-100.jpg" alt="スイーツの写真" class="menu_photo">
+                <picture>
+                    <source srcset="./images/cake_sp@2x-100.jpg" media="(max-width:767px)">
+                    <img src="./images/pc_menu_sweets-100.jpg" alt="スイーツの写真" class="menu_photo">
+                </picture>
                 <div class="sweets">
                     <h3 class="menu_title">Sweets</h3>
                     <p>スイーツメニューの概要を100文字程度で紹介します。素材やこだわりなどをアピールしていきます。</p>
@@ -153,6 +180,16 @@
             <img src="./images/to_top@2x.png" alt="topへ">
         </a>
     </div>
+
+    <script>
+        $(function () {
+            $('.sp_btn').on('click', function () {
+                $('.sp_btn').toggleClass('open');
+                $('.sp_nav').fadeToggle();
+            })
+
+        })
+    </script>
 
 </body>
 

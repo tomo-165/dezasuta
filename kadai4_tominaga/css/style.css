@@ -36,6 +36,110 @@ header {
     font-weight: bold;
 }
 
+/* スマホ版メニュー */
+.sp_nav,
+.sp_btn {
+    display: none;
+}
+
+@media screen and (max-width: 1100px) {
+    .pc_nav {
+        display: none;
+    }
+
+    .sp_btn {
+        display: block;
+        height: 23px;
+        /* 位置の調整 */
+        position: absolute;
+        right: 25px;
+        top: 20px;
+        cursor: pointer;
+        /* 重なり具合 */
+        z-index: 2;
+    }
+
+    .sp_btn span {
+        display: block;
+        width: 33px;
+        height: 3px;
+        border-radius: 2px;
+        background: #fff;
+        /* 位置の調整 */
+        position: relative;
+        top: 10px;
+        transition: 0.3s;
+    }
+
+    .sp_btn span::before,
+    .sp_btn span::after {
+        content: "";
+        display: block;
+        width: 33px;
+        height: 3px;
+        border-radius: 2px;
+        background: #fff;
+        /* 位置の調整 */
+        position: absolute;
+        transition: 0.3s;
+    }
+
+    .sp_btn span::before {
+        bottom: 10px;
+    }
+
+    .sp_btn span::after {
+        top: 10px;
+    }
+
+    /* バツ印 */
+    .sp_btn.open span {
+        background-color: transparent;
+    }
+
+    .sp_btn.open span::before {
+        bottom: 0;
+        transform: rotate(45deg);
+    }
+
+    .sp_btn.open span::after {
+        top: 0;
+        transform: rotate(-45deg);
+    }
+
+    /* メニューの見た目 */
+    .sp_nav {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background-color: rgba(0, 0, 0, 0.8);
+        /* 重なり具合 */
+        z-index: 1;
+    }
+
+    .sp_nav li {
+        color: #fff;
+        font-size: 18px;
+        font-weight: bold;
+        font-family: "游ゴシック体", YuGothic, "游ゴシック", "Yu Gothic", "メイリオ",
+            "Hiragino Kaku Gothic ProN", "Hiragino Sans", sans-serif;
+    }
+
+    .sp_nav ul {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+        align-items: center;
+        justify-content: center;
+    }
+
+    /* vhはview heightの略。ブラウザの高さ */
+    /* rgbaのaは透過度をあらわす。 */
+}
+
 /* キャッチコピー */
 .copy {
     text-align: center;
@@ -60,6 +164,22 @@ header {
     letter-spacing: 0.1em;
 }
 
+@media screen and (max-width: 1100px) {
+    .copy2 {
+        font-size: 60px;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .copy2 {
+        white-space: nowrap;
+    }
+
+    .copy3 br {
+        display: none;
+    }
+}
+
 /* 共通 */
 h2 {
     text-align: center;
@@ -74,6 +194,7 @@ h2 {
 /* ABOUT US */
 .about_photo {
     border-bottom-right-radius: 82px;
+    grid-area: image;
 }
 
 .style {
@@ -91,6 +212,7 @@ h2 {
     width: 272px;
     height: 77px;
     margin-top: 55px;
+    grid-area: title;
 }
 
 .about_text {
@@ -110,6 +232,39 @@ h2 {
     justify-content: space-between;
 }
 
+.about_detail {
+    grid-area: text;
+}
+
+@media screen and (max-width: 1100px) {
+    .about_title {
+        font-size: 33px;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    #about {
+        flex-direction: column;
+        /* grid-areaを使うと各要素に名前をつけることができ、名前を使ってレイアウト上にどうやって配置するかを指定できるとのことだが... */
+        /* grid-template-areas: "title" "image" "subtext"; */
+    }
+
+    .style {
+        order: 2;
+    }
+
+    .title1 {
+        order: 1;
+    }
+
+    .about_detail {
+        order: 3;
+    }
+
+    .about_photo {
+        border-bottom-right-radius: 0;
+    }
+}
 
 
 /* MENU */
@@ -149,6 +304,24 @@ h2 {
 
 #menu {
     padding: 0 10px;
+}
+
+/* スマホ版 */
+@media screen and (max-width: 767px) {
+    .menu_detail {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .menu_detail li {
+        width: 80%;
+        margin: 0 auto;
+    }
+
+    .menu_photo {
+        width: 100%;
+        height: auto;
+    }
 }
 
 
@@ -205,6 +378,23 @@ h2 {
     padding: 0 10px;
 }
 
+@media screen and (max-width: 767px) {
+    .event_detail ul {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0;
+    }
+
+    .event_text {
+        width: 80vw;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+}
+
+
+
 /* access */
 .title5 {
     width: 214px;
@@ -246,6 +436,16 @@ footer {
     font-size: 16px;
     text-align: center;
     padding-bottom: 73px;
+}
+
+@media screen and (max-width: 767px) {
+    .footer_wrap {
+        flex-direction: column;
+        align-items: flex-start;
+        padding-left: 10px;
+        gap: 20px;
+    }
+
 }
 
 /* ページトップボタン */
