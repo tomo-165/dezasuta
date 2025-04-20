@@ -171,12 +171,21 @@ header {
 }
 
 @media screen and (max-width: 767px) {
+    .copy1 {
+        font-size: 17px;
+    }
+
     .copy2 {
         white-space: nowrap;
+        font-size: 38px;
     }
 
     .copy3 br {
         display: none;
+    }
+
+    .copy3 {
+        font-size: 16px;
     }
 }
 
@@ -190,6 +199,8 @@ h2 {
     margin: 0 auto;
     text-align: center;
 }
+
+@media screen and (max-width: 767px) {}
 
 /* ABOUT US */
 .about_photo {
@@ -224,6 +235,7 @@ h2 {
     text-align: left;
     width: 41%;
     padding-right: 10px;
+    /* display: contents; */
 }
 
 #about {
@@ -250,11 +262,18 @@ h2 {
     }
 
     .style {
-        order: 2;
+        width: 100%;
+    }
+
+    .about_group {
+        display: contents;
     }
 
     .title1 {
-        order: 1;
+        order: -1;
+        margin: 53px auto 11px;
+        width: 160px;
+        height: 45px;
     }
 
     .about_detail {
@@ -263,6 +282,16 @@ h2 {
 
     .about_photo {
         border-bottom-right-radius: 0;
+    }
+
+    .about_title {
+        font-size: 36px;
+        margin: 35px 67px 20px 20px;
+    }
+
+    .about_text {
+        font-size: 16px;
+        padding: 0 10px;
     }
 }
 
@@ -318,9 +347,22 @@ h2 {
         margin: 0 auto;
     }
 
-    .menu_photo {
+    /* .menu_photo {
         width: 100%;
         height: auto;
+    } */
+
+    h3 {
+        font-size: 40px;
+    }
+
+    .menu_detail p {
+        font-size: 17px;
+    }
+
+    .title2 {
+        width: 88px;
+        height: 45px;
     }
 }
 
@@ -340,6 +382,14 @@ h2 {
 .photo img {
     width: 20%;
 }
+
+@media screen and (max-width: 767px) {
+    .title3 {
+        width: 142px;
+        height: 45;
+    }
+}
+
 
 /* EVENT */
 .title4 {
@@ -391,6 +441,16 @@ h2 {
         text-overflow: ellipsis;
         white-space: nowrap;
     }
+
+    .event_detail li {
+        font-size: 16px;
+        text-align: left
+    }
+
+    .title4 {
+        width: 100px;
+        height: 45px
+    }
 }
 
 
@@ -406,6 +466,17 @@ iframe {
     height: 471px;
     width: 100%;
     display: block;
+}
+
+@media screen and (max-width: 767px) {
+    iframe {
+        height: 191px;
+    }
+
+    .title5 {
+        width: 124px;
+        height: 45px;
+    }
 }
 
 /* footer */
@@ -446,6 +517,17 @@ footer {
         gap: 20px;
     }
 
+    .foooter_wrap p {
+        font-size: 18px;
+    }
+
+    .copy_light {
+        font-size: 16px;
+    }
+
+    .footer_logo {
+        padding-left: 0;
+    }
 }
 
 /* ページトップボタン */
@@ -454,4 +536,13 @@ footer {
     right: 20px;
     bottom: 20px;
     width: 125px;
+}
+
+@media screen and (max-width: 767px) {
+    .pagetop {
+        position: fixed;
+        right: 20px;
+        bottom: 20px;
+        width: 100px;
+    }
 }
